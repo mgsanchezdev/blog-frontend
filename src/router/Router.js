@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Layout from '../views/Layout/Layout';
-import Home from '../views/Home/home';
+import Home from '../views/Home/Home';
 import Error from '../views/Error/Error';
 import Details from '../views/Details/Details';
 import PostCreate from '../views/PostCreate/PostCreate';
@@ -15,7 +15,7 @@ const router = () => (
         <Layout>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/details" component={Details} />
+            <Route exact path="/detail" component={Details} />
             <Route path="/create" component={PostCreate} />
             <Route path="/update" component={PostUpdate} />
             <Route exact path="*" component={Error} />

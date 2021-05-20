@@ -1,0 +1,16 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,500);
+
+.container-post {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  margin-top: 10px;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.title-posts {
+  font-family: 'Zen Dots', cursive;
+  text-align: center;
+}

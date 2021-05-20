@@ -1,0 +1,19 @@
+.container{
+    background-color: dimgrey;
+    border-radius: 5%;
+    
+}
+
+.title-post{
+    margin-top: 1rem;
+}
+
+.container-button{
+    display: flex;
+    justify-content: center;
+}
+
+.btn-post{
+    width: 100px;
+    margin: 1rem;
+    }
