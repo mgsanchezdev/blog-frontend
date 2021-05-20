@@ -2,12 +2,17 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 
+import { PostDetailsContext } from '../../context/postDetails';
+
 import './post.css';
 
 const Post = ({ post }) => {
+  const { setPost } = React.useContext(PostDetailsContext);
+
   const history = useHistory();
 
   const handlerDetails = () => {
+    setPost(post);
     history.push('/detail');
   };
 
@@ -22,7 +27,7 @@ const Post = ({ post }) => {
 
   return (
     <div className="container">
-      <h4 className = "title-post">Titulo: {post?.title}</h4>
+      <h4 className="title-post">Titulo: {post?.title}</h4>
       <hr />
       <div className="container-button">
         <Button variant="info" onClick={handlerDetails} className="btn-post">

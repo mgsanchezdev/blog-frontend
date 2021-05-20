@@ -1,0 +1,7 @@
+.container-post-details {
+ display: flex; 
+ flex-direction: column; 
+ justify-content: center; 
+ height: 90vh;  
+  text-align: center;
+}
