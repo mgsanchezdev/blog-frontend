@@ -16,8 +16,8 @@ const router = () => (
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/detail" component={Details} />
-            <Route path="/create" component={PostCreate} />
-            <Route path="/update" component={PostUpdate} />
+            <Route exact path="/create" component={PostCreate} />
+            <Route exact path="/update" component={PostUpdate} />
             <Route exact path="*" component={Error} />
           </Switch>
         </Layout>

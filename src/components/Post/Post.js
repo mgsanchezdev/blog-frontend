@@ -1,6 +1,9 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
+import Swal from 'sweetalert';
+
+import http from '../../utils/http';
 
 import { PostDetailsContext } from '../../context/postDetails';
 
@@ -21,8 +24,17 @@ const Post = ({ post }) => {
   };
 
   const handlerDelete = () => {
-    // llamar al hooks de eliminar
-    history.push('/');
+    Swal({
+      title: 'Eliminar',
+      text: 'Estas seguro que queres elimnar este post',
+      icon: 'warning',
+      buttons: ['Cancelar', 'Aceptar'],
+    }).then((response) => {
+      if (response) {
+        http.delete(`posts/${post.id}`);
+        history.push('/');
+      }
+    });
   };
 
   return (
@@ -36,7 +48,13 @@ const Post = ({ post }) => {
         <Button onClick={handlerEdit} className="btn-post">
           Editar
         </Button>
-        <Button variant="danger" onClick={handlerDelete} className="btn-post">
+        <Button
+          variant="danger"
+          onClick={() => {
+            handlerDelete();
+          }}
+          className="btn-post"
+        >
           Elimnar
         </Button>
       </div>
