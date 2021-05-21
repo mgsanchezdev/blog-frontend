@@ -1,7 +1,25 @@
 .footer-posts {
-    height :38px;   
-     background-color : #212529;
-     color :white;
-     text-align:  center;
-   }
-   
+  height: 38px;
+  background-color: #212529;
+  color: white;
+  text-align: center;
+}
+
+@media (max-width: 780px) {
+  .footer-posts {
+    font-size: 10px;
+  }
+  .footer-posts p {
+    padding-top: 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  .footer-posts {
+    font-size: 10px;
+  }
+
+  .footer-posts p {
+    padding-top: 10px;
+  }
+}

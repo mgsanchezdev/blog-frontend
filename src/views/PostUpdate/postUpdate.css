@@ -66,3 +66,37 @@ textarea
     display: flex;
     justify-content: center;
   }
+
+  @media (max-width: 780px) {
+    .edit-form{
+      margin:0 !important;
+    }
+    .container-post-update{
+      height: calc(100vh + 100px);
+    }
+
+    .edit-form.form {
+      padding-left: 0px !important;
+    }
+
+    .btnUpdate{
+      margin-left: 35px;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .edit-form{
+      margin:0 !important;
+    }
+    .container-post-update{
+      height: calc(100vh + 100px);
+    }
+
+    .edit-form.form {
+      padding-left: 0px !important;
+    }
+
+    .btnUpdate{
+      margin-left: 35px;
+    }
+  }

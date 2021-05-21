@@ -71,7 +71,7 @@ const PostUpdate = () => {
         </div>
 
         <div className="submit-button-wrapper">
-          <Button type="submit" className="btn" variant="success">
+          <Button type="submit" className="btnUpdate" variant="success">
             Modificar post
           </Button>
         </div>

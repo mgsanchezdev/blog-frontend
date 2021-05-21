@@ -1,19 +1,39 @@
-.container{
-    background-color: dimgrey;
-    border-radius: 5%;
-    
+.container {
+  background-color: dimgrey;
+  border-radius: 5%;
 }
 
-.title-post{
-    margin-top: 1rem;
+.title-post {
+  margin-top: 1rem;
 }
 
-.container-button{
-    display: flex;
-    justify-content: center;
+.container-button {
+  display: flex;
+  justify-content: center;
 }
 
-.btn-post{
-    width: 100px;
-    margin: 1rem;
-    }
+.btn-post {
+  width: 100px;
+  margin: 1rem;
+}
+
+@media (max-width: 780px) {
+  .container-button {
+    flex-direction: column;
+    margin-left: 15%;
+  }
+  .btn-post {
+    width: 200px;
+  }
+}
+
+@media (max-width: 320px) {
+  .container-button {
+    flex-direction: column;
+    margin-left: 35px;
+  }
+
+  .btn-post {
+    width: 200px;
+  }
+}

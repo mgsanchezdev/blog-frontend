@@ -61,7 +61,7 @@ const PostCreate = () => {
           </div>
 
           <div className="submit-button-wrapper">
-            <Button type="submit" className="btn" variant="success">
+            <Button type="submit" className="btn-create" variant="success">
               Crear post
             </Button>
           </div>
