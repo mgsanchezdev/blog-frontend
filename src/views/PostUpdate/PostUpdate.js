@@ -18,8 +18,8 @@ const PostUpdate = () => {
 
   useEffect(() => {
     reset({
-      title: post.title || '',
-      body: post.body || '',
+      title: post.title || 'default',
+      body: post.body || 'default',
     });
   }, [post]);
 
@@ -43,6 +43,7 @@ const PostUpdate = () => {
   };
 
   return (
+    <div className = "container-post-update">
     <div className="edit-form">
       <h1 className="title-edit-post">Editar el post</h1>
       <form className="edit-form form" onSubmit={handleSubmit(onSubmit)}>
@@ -53,7 +54,7 @@ const PostUpdate = () => {
               type="text"
               name="title"
               id="title"
-              {...register('title')}
+              ref={register}
               placeholder="título"
             />
           </div>
@@ -63,7 +64,7 @@ const PostUpdate = () => {
               maxLength="140"
               name="body"
               id="body"
-              {...register('body')}
+              ref={register}
               placeholder="Contenido del post"
             />
           </div>
@@ -75,6 +76,7 @@ const PostUpdate = () => {
           </Button>
         </div>
       </form>
+    </div>
     </div>
   );
 };

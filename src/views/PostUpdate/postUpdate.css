@@ -1,7 +1,8 @@
+.container-post-update{
+  height: 81vh;
+}
 .edit-form {
     width: 100%;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
     padding: 1rem;
   }
 

@@ -33,38 +33,40 @@ const PostCreate = () => {
   };
 
   return (
-    <div className="edit-form">
-      <h1 className="title-edit-post">Crear el post</h1>
-      <form className="edit-form form" onSubmit={handleSubmit(onSubmit)}>
-        <div className="form-row">
-          <div className="form-control">
-            <label htmlFor="title">Título</label>
-            <input
-              type="text"
-              name="title"
-              id="title"
-              {...register('title')}
-              placeholder="título"
-            />
+    <div className="container-form-create">
+      <div className="edit-form">
+        <h1 className="title-edit-post">Crear el post</h1>
+        <form className="edit-form form" onSubmit={handleSubmit(onSubmit)}>
+          <div className="form-row">
+            <div className="form-control">
+              <label htmlFor="title">Título</label>
+              <input
+                type="text"
+                name="title"
+                id="title"
+                ref={register}
+                placeholder="título"
+              />
+            </div>
+            <div className="form-control">
+              <label htmlFor="body">Post</label>
+              <textarea
+                maxLength="140"
+                name="body"
+                id="body"
+                ref={register}
+                placeholder="Contenido del post"
+              />
+            </div>
           </div>
-          <div className="form-control">
-            <label htmlFor="body">Post</label>
-            <textarea
-              maxLength="140"
-              name="body"
-              id="body"
-              {...register('body')}
-              placeholder="Contenido del post"
-            />
-          </div>
-        </div>
 
-        <div className="submit-button-wrapper">
-          <Button type="submit" className="btn" variant="success">
-            Crear post
-          </Button>
-        </div>
-      </form>
+          <div className="submit-button-wrapper">
+            <Button type="submit" className="btn" variant="success">
+              Crear post
+            </Button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
