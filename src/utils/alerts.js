@@ -1,8 +1,8 @@
-import Swal from 'sweetalert';
+import Swal from 'sweetalert2';
 
 export const messageAlert = (icon, title, text) =>
   Swal.fire({
-    title: { title },
+    title,
     text,
     icon,
     confirmButtonText: 'Aceptar',

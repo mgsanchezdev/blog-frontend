@@ -20,6 +20,7 @@ const Post = ({ post }) => {
   };
 
   const handlerEdit = () => {
+    setPost(post);
     history.push('/update');
   };
 
