@@ -25,13 +25,21 @@ const PostUpdate = () => {
 
   const onSubmit = (formData) => {
     const formDataCopy = { ...formData };
-    http.put(`posts/${post.id}`, formDataCopy).then((result) => {
-      messageAlert('success', 'Post actualizado', result.data.title).then(
-        () => {
-          history.push('/');
-        }
+    if (formDataCopy.title !== '' && formDataCopy.body) {
+      http.put(`posts/${post.id}`, formDataCopy).then((result) => {
+        messageAlert('success', 'Post actualizado', result.data.title).then(
+          () => {
+            history.push('/');
+          }
+        );
+      });
+    } else {
+      messageAlert(
+        'error',
+        'Error al editar el Post',
+        'Complete todos los campos'
       );
-    });
+    }
   };
 
   return (
