@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+# Challenge Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+El deply del challenge:
 
-## Available Scripts
+### Detalles de challenge
+Desarrollar un cliente para un Blog. 
+El mismo debe ser armado en React, y consumir los datos de una JSON Placeholder, una API que expone datos ficticios en formato JSON.
 
-In the project directory, you can run:
+Los endpoints que deberás utilizar son:
 
-### `npm start`
+GET https://jsonplaceholder.typicode.com/posts
+Devuelve un listado de posts
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+GET https://jsonplaceholder.typicode.com/posts/:id
+Devuelve el detalle de un post en base al id especificado en el parámetro
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+POST https://jsonplaceholder.typicode.com/posts
+Simula la creación de un nuevo post
 
-### `npm test`
+PUT/PATCH https://jsonplaceholder.typicode.com/posts/:id
+Simula la actualización de un post en base al id especificado en el parámetro
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+DELETE https://jsonplaceholder.typicode.com/posts/:id
+Simula la eliminación de un post en base al id especificado en el parámetro
 
-### `npm run build`
+Utilizando estos endpoints, la aplicación deberá contener las siguientes secciones:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Home
+Mostrará un listado de posts. En este listado, deberá mostrarse solamente el título de cada uno, y las acciones para ir al detalle del mismo, editarlo o eliminarlo.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Detalle
+Deberá recibir el identificador de un post y, en el caso de que exista, mostrar sus datos. Caso contrario, deberá mostrar un mensaje de error.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Formulario de creación
+Deberá mostrar un formulario que permita crear un nuevo post. El formulario deberá contener los campos título y contenido, y realizar la validación de los mismos (ambos son obligatorios). Al hacer el submit, debe realizarse la petición al endpoint correspondiente.
 
-### `npm run eject`
+Formulario de Edición
+Deberá recibir el identificador de un post y mostrar un formulario que permita editarlo. En el caso de que no exista, mostrar un mensaje de error. El formulario deberá contener los campos título y contenido, y realizar la validación de los mismos (ambos son obligatorios). Al hacer el submit, debe realizarse la petición al endpoint correspondiente.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Otras consideraciones
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+La app deberá contener un encabezado con los links al Home y al Formulario de Edición. 
+Debe ser responsive, se puede utilizar una plantilla. 
+La acción de “Eliminar” que contendrán los posts listados en la sección Home deberán realizar la petición al endpoint correspondiente.
+La gestión del estado puede realizarse de la forma que prefieran, como así también la lógica de navegación.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Detalles de Implemetación:
+ Creado el proyecto con Create React App
+### Librerías utilizadas:
+Se configuro para el proyecto Eslint (Airbnb: https://github.com/airbnb/javascript), Prittier y Husky.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Para el manejo de rutas React Router Dom
 
-## Learn More
+npm install --save react-router-dom
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Para los estilos se utilizó React Bootstrap
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+npm install react-bootstrap bootstrap@4.6.0
 
-### Code Splitting
+Para cuando la api está cargando, mostramos un spinner:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+npm install --save react-spinners
 
-### Analyzing the Bundle Size
+Para hacer peticiones a la API usamos Axios:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+npm install axios
 
-### Making a Progressive Web App
+En el archivo index que está en la carpeta public colocamos:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
-### Advanced Configuration
+Cuando voy a eliminar un post para preguntar a confirmación uso:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+npm install --save sweetalert
 
-### Deployment
+y 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+npm install --save sweetalert2
 
-### `npm run build` fails to minify
+usamos para los formulario:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+npm install react-hook-form
+
+Para descargar el proyecto:
+
+git clone git@github.com:mgsanchezdev/ blog-frontend.git
+
+cd blog-frontend
+
+npm install
+
+Se abre en el navegador:
+
+http://localhost:3000
+
+
+
+
